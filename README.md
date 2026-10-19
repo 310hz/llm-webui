@@ -7,13 +7,13 @@
 
 ## 使い方
 
-| コマンド | 内容 |
-| --- | --- |
-| `just start` | 起動 |
-| `just stop` | 停止 |
-| `just restart` | 再起動 |
-| `just update` | イメージを pull して再起動 |
-| `just logs` | ログ表示 |
+1. `just`で実行する。サブコマンドは以下:
+
+- `start`: 起動
+- `stop`: 停止
+- `restart`: 再起動
+- `update`: コンテナイメージの更新と再起動
+- `logs`: ログ表示
 
 サーバーを起動すると以下のURLに各種ページが立ち上がる:
 
