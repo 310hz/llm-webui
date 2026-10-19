@@ -9,34 +9,6 @@ services:
       - ./data/openwebui:/app/backend/data
     environment:
       - WEBUI_AUTH=false
-      - OPENAI_API_BASE_URL=http://bifrost:8080/v1
-      - OPENAI_API_KEY=sk-secret
-    depends_on:
-      - bifrost
+      - OPENAI_API_BASE_URL=http://host.docker.internal:50012/v1
     restart: always
-    networks:
-      - llmnet
     mem_limit: 512m
-
-  bifrost:
-    image: maximhq/bifrost
-    container_name: bifrost
-    ports:
-      - "50012:8080"
-    volumes:
-      - ./data/bifrost:/app/db
-      - ./config.json:/app/data/config.json
-    env_file:
-      - .env
-    restart: always
-    networks:
-      - llmnet
-    mem_limit: 128m
-
-networks:
-  llmnet:
-    driver: bridge
-
-volumes:
-  prometheus_data:
-    driver: local
