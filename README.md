@@ -9,13 +9,15 @@ API は [llm-api](https://github.com/310hz/llm-api) を `http://host.docker.inte
 
 ## 使い方
 
-1. `svs up llm-api` で llm-api を起動する
-2. 任意のコマンド名で`entrypoint.sh`にaliasを通す。サブコマンドは以下:
+先に llm-api を起動しておく。
 
-- `start`: 起動
-- `stop`: 停止
-- `restart`: 再起動
-- `update`: コンテナイメージの更新と再起動
+| コマンド | 内容 |
+| --- | --- |
+| `just start` | 起動 |
+| `just stop` | 停止 |
+| `just restart` | 再起動 |
+| `just update` | イメージを pull して再起動 |
+| `just logs` | ログ表示 |
 
 サーバーを起動すると以下のURLに各種ページが立ち上がる:
 
